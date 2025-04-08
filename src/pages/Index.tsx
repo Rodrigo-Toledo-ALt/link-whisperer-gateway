@@ -83,6 +83,34 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
+      {/* Top contact bar */}
+      <div className="bg-white py-2 px-6 border-b contact-header">
+        <div className="container mx-auto flex justify-between items-center">
+          <div className="flex items-center space-x-4">
+            <div className="flex items-center text-[#696969]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <span className="font-medium">623 50 63 22</span>
+            </div>
+            <div className="hidden md:flex items-center text-[#696969]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span>C/Fuenteovejuna, nº8, 41018 Sevilla</span>
+            </div>
+          </div>
+          <a href="https://wa.me/+34623506322" target="_blank" rel="noopener noreferrer" className="whatsapp-button text-white px-4 py-2 rounded-md flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
+              <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/>
+              <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/>
+            </svg>
+            Hablamos por WhatsApp
+          </a>
+        </div>
+      </div>
+      
       {/* Header */}
       <header className="bg-white py-4 px-6 border-b shadow-sm">
         <div className="container mx-auto flex items-center justify-between">
@@ -104,11 +132,6 @@ const Index = () => {
             <button className="p-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-search">
                 <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
-              </svg>
-            </button>
-            <button className="p-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-phone">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
               </svg>
             </button>
           </div>
@@ -162,11 +185,11 @@ const Index = () => {
       {/* Services Section */}
       <div className="py-16 px-6">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-serif font-bold text-center mb-12">Nuestros Servicios</h2>
+          <h2 className="text-3xl font-serif font-bold text-center mb-12 text-[#696969]">Nuestros Servicios</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 service-grid">
             {services.map((service, index) => (
-              <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow">
+              <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow service-card border border-[#E0CEE0]">
                 <div className="h-64 bg-gray-200 overflow-hidden">
                   <img 
                     src={service.image} 
@@ -175,17 +198,17 @@ const Index = () => {
                   />
                 </div>
                 <CardHeader>
-                  <CardTitle className="text-xl font-serif">{service.name}</CardTitle>
+                  <CardTitle className="text-xl font-serif text-[#696969]">{service.name}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="mb-4">{service.description}</CardDescription>
                   <div className="flex justify-between items-center">
-                    <span className="font-bold text-lg">{service.price}</span>
+                    <span className="font-bold text-lg text-[#696969]">{service.price}</span>
                     <span className="text-sm text-gray-500">{service.duration}</span>
                   </div>
                 </CardContent>
                 <CardFooter>
-                  <Button variant="outline" className="w-full">MÁS INFO</Button>
+                  <Button variant="outline" className="w-full border-[#C6AAE3] text-[#696969] hover:bg-[#C6AAE3] hover:text-white">MÁS INFO</Button>
                 </CardFooter>
               </Card>
             ))}
@@ -194,9 +217,9 @@ const Index = () => {
       </div>
 
       {/* Testimonials */}
-      <div className="py-16 px-6 bg-gray-50">
+      <div className="py-16 px-6 bg-[#F9F6F9]">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-serif font-bold text-center mb-12">Testimonios</h2>
+          <h2 className="text-3xl font-serif font-bold text-center mb-12 text-[#696969]">Testimonios</h2>
           
           <Carousel className="w-full max-w-4xl mx-auto">
             <CarouselContent>
@@ -204,17 +227,17 @@ const Index = () => {
                 <CarouselItem key={index}>
                   <div className="p-6 text-center">
                     <div className="mb-6">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="mx-auto text-gray-400">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="mx-auto text-[#C6AAE3]">
                         <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/>
                         <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/>
                       </svg>
                     </div>
-                    <p className="text-lg italic mb-4">
+                    <p className="text-lg italic mb-4 text-[#696969]">
                       {index === 0 && "La terapia en Toledo Gamero ha transformado mi vida. Son profesionales excepcionales que te escuchan con atención y te ayudan a encontrar las herramientas para mejorar."}
                       {index === 1 && "Gracias a las sesiones con la psicóloga he conseguido superar mi ansiedad y disfrutar nuevamente de la vida. 100% recomendable."}
                       {index === 2 && "La terapia de pareja nos ha ayudado enormemente a mejorar nuestra comunicación. El ambiente del gabinete es acogedor y profesional."}
                     </p>
-                    <p className="font-semibold">
+                    <p className="font-semibold text-[#A880A8]">
                       {index === 0 && "María G."}
                       {index === 1 && "Carlos P."}
                       {index === 2 && "Laura y Antonio"}
@@ -235,36 +258,36 @@ const Index = () => {
           <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
             <div className="md:flex">
               <div className="md:w-1/2 p-8">
-                <h2 className="text-3xl font-serif font-semibold mb-6">Contacto</h2>
-                <p className="mb-6">
+                <h2 className="text-3xl font-serif font-semibold mb-6 text-[#696969]">Contacto</h2>
+                <p className="mb-6 text-[#696969]">
                   Estamos aquí para ayudarte. Ponte en contacto con nosotros para programar una cita o resolver cualquier duda.
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-3 text-[#C6AAE3]">
                       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                     </svg>
-                    <span>+34 612 345 678</span>
+                    <span>+34 623 50 63 22</span>
                   </div>
                   <div className="flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-3 text-[#C6AAE3]">
                       <rect width="20" height="16" x="2" y="4" rx="2"/>
                       <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
                     </svg>
                     <span>contacto@toledogameropsicologia.es</span>
                   </div>
                   <div className="flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-3 text-[#C6AAE3]">
                       <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
                       <circle cx="12" cy="10" r="3"/>
                     </svg>
-                    <span>Calle Principal 123, Sevilla, España</span>
+                    <span>C/Fuenteovejuna, nº8, 41018 Sevilla</span>
                   </div>
                 </div>
               </div>
-              <div className="md:w-1/2 bg-gray-100 p-8">
-                <h3 className="text-xl font-semibold mb-6">Horario de Atención</h3>
-                <div className="space-y-2">
+              <div className="md:w-1/2 bg-[#F9F6F9] p-8">
+                <h3 className="text-xl font-semibold mb-6 text-[#696969]">Horario de Atención</h3>
+                <div className="space-y-2 text-[#696969]">
                   <div className="flex justify-between">
                     <span>Lunes - Viernes</span>
                     <span>9:00 - 20:00</span>
@@ -279,7 +302,7 @@ const Index = () => {
                   </div>
                 </div>
                 <div className="mt-8">
-                  <Button className="w-full">PEDIR CITA</Button>
+                  <Button className="w-full bg-[#A880A8] hover:bg-[#96739b]">PEDIR CITA</Button>
                 </div>
               </div>
             </div>
@@ -288,7 +311,7 @@ const Index = () => {
       </div>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
+      <footer className="bg-[#696969] text-white py-12">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between">
             <div className="mb-8 md:mb-0">
