@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
@@ -81,35 +80,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
-      {/* Top contact bar */}
-      <div className="bg-white py-2 px-6 border-b contact-header">
-        <div className="container mx-auto flex justify-between items-center">
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center text-[#696969]">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-              </svg>
-              <span className="font-medium">623 50 63 22</span>
-            </div>
-            <div className="hidden md:flex items-center text-[#696969]">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
-                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
-                <circle cx="12" cy="10" r="3"/>
-              </svg>
-              <span>C/Fuenteovejuna, nº8, 41018 Sevilla</span>
-            </div>
-          </div>
-          <a href="https://wa.me/+34623506322" target="_blank" rel="noopener noreferrer" className="whatsapp-button text-white px-4 py-2 rounded-md flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
-              <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/>
-              <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/>
-            </svg>
-            Hablamos por WhatsApp
-          </a>
-        </div>
-      </div>
-      
-      {/* Header */}
+      {/* Header principal - Modificado según lo solicitado */}
       <header className="bg-white py-4 px-6 border-b shadow-sm">
         <div className="container mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-6">
@@ -120,18 +91,35 @@ function App() {
                 <line x1="4" x2="20" y1="18" y2="18"/>
               </svg>
             </button>
+            
+            <h1 className="text-xl md:text-2xl font-serif font-bold tracking-wider text-center">
+              TOLEDO GAMERO PSICOLOGÍA
+            </h1>
           </div>
           
-          <h1 className="text-xl md:text-2xl font-serif font-bold tracking-wider text-center">
-            TOLEDO GAMERO PSICOLOGÍA
-          </h1>
-          
-          <div className="flex items-center space-x-6">
-            <button className="p-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+          <div className="flex items-center space-x-4">
+            <div className="flex items-center text-[#696969]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
               </svg>
-            </button>
+              <span className="font-medium">623 50 63 22</span>
+            </div>
+            
+            <div className="hidden md:flex items-center text-[#696969]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span>C/Fuenteovejuna, nº8, 41018 Sevilla</span>
+            </div>
+            
+            <a href="https://wa.me/+34623506322" target="_blank" rel="noopener noreferrer" className="whatsapp-button text-white px-4 py-2 rounded-md flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
+                <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/>
+                <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/>
+              </svg>
+              Hablamos por WhatsApp
+            </a>
           </div>
         </div>
       </header>
