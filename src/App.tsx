@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import ChatBot from './components/ChatBot/ChatBot';
 
 function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -320,6 +321,8 @@ function App() {
           </div>
         </div>
       </footer>
+      
+      <ChatBot />
     </div>
   );
 }
