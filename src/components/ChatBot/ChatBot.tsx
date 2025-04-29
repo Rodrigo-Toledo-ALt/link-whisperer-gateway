@@ -14,7 +14,6 @@ interface Message {
 const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState("");
-  const [apiKey, setApiKey] = useState(() => localStorage.getItem('openai_key') || "");
   const [messages, setMessages] = useState<Message[]>(() => {
     const saved = localStorage.getItem('chatMessages');
     return saved ? JSON.parse(saved) : [];
@@ -30,7 +29,7 @@ const ChatBot = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!message.trim()) return;
 
@@ -43,51 +42,15 @@ const ChatBot = () => {
     setMessages(prev => [...prev, newMessage]);
     setMessage("");
 
-    try {
-      const response = await fetch('https://api.openai.com/v1/chat/completions', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${apiKey}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          model: "gpt-4o-mini",
-          messages: [
-            {
-              role: "system",
-              content: "Eres un asistente amable y profesional de Toledo Gamero Psicología. Tu objetivo es ayudar a los usuarios con consultas sobre servicios psicológicos, programación de citas y soporte general. Mantén tus respuestas concisas y empáticas."
-            },
-            {
-              role: "user",
-              content: message
-            }
-          ],
-          max_tokens: 150
-        }),
-      });
-
-      const data = await response.json();
-      
+    // Simular respuesta del bot
+    setTimeout(() => {
       const botMessage: Message = {
-        text: data.choices[0].message.content,
+        text: "Gracias por tu mensaje. En breve un profesional se pondrá en contacto contigo.",
         isBot: true,
         timestamp: new Date().toLocaleTimeString()
       };
-      
       setMessages(prev => [...prev, botMessage]);
-    } catch (error) {
-      const errorMessage: Message = {
-        text: "Lo siento, ha ocurrido un error al procesar tu mensaje. Por favor, intenta de nuevo más tarde.",
-        isBot: true,
-        timestamp: new Date().toLocaleTimeString()
-      };
-      setMessages(prev => [...prev, errorMessage]);
-    }
-  };
-
-  const handleApiKeySubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    localStorage.setItem('openai_key', apiKey);
+    }, 1000);
   };
 
   return (
@@ -104,26 +67,6 @@ const ChatBot = () => {
           <div className="bg-[#A880A8] text-white p-4 rounded-t-lg">
             <h3 className="font-serif text-lg">Chat con Toledo Gamero</h3>
           </div>
-
-          {!apiKey && (
-            <form onSubmit={handleApiKeySubmit} className="p-4 border-b border-gray-200">
-              <div className="space-y-2">
-                <label className="text-sm text-gray-600">Ingresa tu clave de API de OpenAI:</label>
-                <div className="flex gap-2">
-                  <Input
-                    type="password"
-                    value={apiKey}
-                    onChange={(e) => setApiKey(e.target.value)}
-                    placeholder="sk-..."
-                    className="flex-1"
-                  />
-                  <Button type="submit" className="bg-[#A880A8] hover:bg-[#96739b]">
-                    Guardar
-                  </Button>
-                </div>
-              </div>
-            </form>
-          )}
 
           <div className="flex-1 overflow-y-auto p-4">
             {messages.map((msg, index) => (
@@ -145,11 +88,7 @@ const ChatBot = () => {
                 placeholder="Escribe tu mensaje..."
                 className="flex-1"
               />
-              <Button 
-                type="submit" 
-                className="bg-[#A880A8] hover:bg-[#96739b]"
-                disabled={!apiKey}
-              >
+              <Button type="submit" className="bg-[#A880A8] hover:bg-[#96739b]">
                 Enviar
               </Button>
             </div>
