@@ -1,8 +1,21 @@
+
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import ChatBot from './components/ChatBot/ChatBot';
+import MainNavigation from './components/MainNavigation';
 
-function App() {
+// Import Pages
+import AboutUs from './pages/AboutUs';
+import IndividualTherapy from './pages/therapies/IndividualTherapy';
+import CoupleTherapy from './pages/therapies/CoupleTherapy';
+import AdolescentTherapy from './pages/therapies/AdolescentTherapy';
+import OnlineTherapy from './pages/therapies/OnlineTherapy';
+import PsychologicalEvaluation from './pages/therapies/PsychologicalEvaluation';
+import MindfulnessTherapy from './pages/therapies/MindfulnessTherapy';
+
+// HomePage Component
+const HomePage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   
   // Datos para las diapositivas del carrusel
@@ -32,6 +45,7 @@ function App() {
       description: 'Atención personalizada en un espacio seguro',
       price: 'Desde 60€',
       duration: '50 minutos',
+      link: '/terapias/individual'
     },
     {
       image: '/placeholder.svg',
@@ -39,6 +53,7 @@ function App() {
       description: 'Mejora la comunicación y resuelve conflictos',
       price: 'Desde 75€',
       duration: '60 minutos',
+      link: '/terapias/pareja'
     },
     {
       image: '/placeholder.svg',
@@ -46,6 +61,7 @@ function App() {
       description: 'Apoyo especializado para jóvenes',
       price: 'Desde 55€',
       duration: '45 minutos',
+      link: '/terapias/adolescentes'
     },
     {
       image: '/placeholder.svg',
@@ -53,6 +69,7 @@ function App() {
       description: 'Atención psicológica desde cualquier lugar',
       price: 'Desde 50€',
       duration: '50 minutos',
+      link: '/terapias/online'
     },
     {
       image: '/placeholder.svg',
@@ -60,6 +77,7 @@ function App() {
       description: 'Diagnóstico completo y plan de tratamiento',
       price: 'Desde 80€',
       duration: '90 minutos',
+      link: '/terapias/evaluacion'
     },
     {
       image: '/placeholder.svg',
@@ -67,6 +85,7 @@ function App() {
       description: 'Aprende técnicas para reducir la ansiedad',
       price: 'Desde 65€',
       duration: '50 minutos',
+      link: '/terapias/mindfulness'
     },
   ];
 
@@ -80,51 +99,7 @@ function App() {
   }, [slides.length]);
 
   return (
-    <div className="min-h-screen bg-white flex flex-col">
-      {/* Header principal - Modificado según lo solicitado */}
-      <header className="bg-white py-4 px-6 border-b shadow-sm">
-        <div className="container mx-auto flex items-center justify-between">
-          <div className="flex items-center space-x-6">
-            <button className="p-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="4" x2="20" y1="12" y2="12"/>
-                <line x1="4" x2="20" y1="6" y2="6"/>
-                <line x1="4" x2="20" y1="18" y2="18"/>
-              </svg>
-            </button>
-            
-            <h1 className="text-xl md:text-2xl font-serif font-bold tracking-wider text-center">
-              TOLEDO GAMERO PSICOLOGÍA
-            </h1>
-          </div>
-          
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center text-[#696969]">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-              </svg>
-              <span className="font-medium">623 50 63 22</span>
-            </div>
-            
-            <div className="hidden md:flex items-center text-[#696969]">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
-                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
-                <circle cx="12" cy="10" r="3"/>
-              </svg>
-              <span>C/Fuenteovejuna, nº8, 41018 Sevilla</span>
-            </div>
-            
-            <a href="https://wa.me/+34623506322" target="_blank" rel="noopener noreferrer" className="whatsapp-button text-white px-4 py-2 rounded-md flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
-                <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/>
-                <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/>
-              </svg>
-              Hablamos por WhatsApp
-            </a>
-          </div>
-        </div>
-      </header>
-
+    <>
       {/* Hero Carousel */}
       <div className="relative w-full h-[500px] overflow-hidden">
         {slides.map((slide, index) => (
@@ -191,9 +166,9 @@ function App() {
                     <span className="font-bold text-lg text-[#696969]">{service.price}</span>
                     <span className="text-sm text-gray-500">{service.duration}</span>
                   </div>
-                  <button className="w-full border border-[#C6AAE3] text-[#696969] hover:bg-[#C6AAE3] hover:text-white py-2 px-4 rounded transition-colors">
+                  <Link to={service.link} className="block w-full text-center border border-[#C6AAE3] text-[#696969] hover:bg-[#C6AAE3] hover:text-white py-2 px-4 rounded transition-colors">
                     MÁS INFO
-                  </button>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -280,50 +255,118 @@ function App() {
           </div>
         </div>
       </div>
+    </>
+  );
+};
 
-      {/* Footer */}
-      <footer className="bg-[#696969] text-white py-12">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between">
-            <div className="mb-8 md:mb-0">
-              <h3 className="text-xl font-serif font-bold mb-4">Toledo Gamero Psicología</h3>
-              <p className="max-w-xs">Cuidamos de tu bienestar mental con atención personalizada y profesional.</p>
+function App() {
+  return (
+    <Router>
+      <div className="min-h-screen bg-white flex flex-col">
+        {/* Header */}
+        <header className="bg-white py-4 px-6 border-b shadow-sm">
+          <div className="container mx-auto flex items-center justify-between">
+            <div className="flex items-center space-x-6">
+              <button className="p-2 md:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="4" x2="20" y1="12" y2="12"/>
+                  <line x1="4" x2="20" y1="6" y2="6"/>
+                  <line x1="4" x2="20" y1="18" y2="18"/>
+                </svg>
+              </button>
+              
+              <Link to="/" className="text-xl md:text-2xl font-serif font-bold tracking-wider text-center">
+                TOLEDO GAMERO PSICOLOGÍA
+              </Link>
+
+              <MainNavigation />
             </div>
-            <div className="mb-8 md:mb-0">
-              <h4 className="text-lg font-semibold mb-4">Servicios</h4>
-              <ul className="space-y-2">
-                <li><a href="#" className="hover:underline">Terapia Individual</a></li>
-                <li><a href="#" className="hover:underline">Terapia de Pareja</a></li>
-                <li><a href="#" className="hover:underline">Terapia para Adolescentes</a></li>
-                <li><a href="#" className="hover:underline">Terapia Online</a></li>
-              </ul>
+            
+            <div className="flex items-center space-x-4">
+              <div className="flex items-center text-[#696969]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                <span className="font-medium">623 50 63 22</span>
+              </div>
+              
+              <div className="hidden md:flex items-center text-[#696969]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+                <span>C/Fuenteovejuna, nº8, 41018 Sevilla</span>
+              </div>
+              
+              <a href="https://wa.me/+34623506322" target="_blank" rel="noopener noreferrer" className="whatsapp-button text-white px-4 py-2 rounded-md flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
+                  <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/>
+                  <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/>
+                </svg>
+                Hablamos por WhatsApp
+              </a>
             </div>
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Síguenos</h4>
-              <div className="flex space-x-4">
-                <a href="#" className="hover:text-gray-300">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-                  </svg>
-                </a>
-                <a href="#" className="hover:text-gray-300">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
-                  </svg>
-                </a>
+          </div>
+        </header>
+
+        {/* Main Content with Routes */}
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/sobre-nosotros" element={<AboutUs />} />
+            <Route path="/terapias/individual" element={<IndividualTherapy />} />
+            <Route path="/terapias/pareja" element={<CoupleTherapy />} />
+            <Route path="/terapias/adolescentes" element={<AdolescentTherapy />} />
+            <Route path="/terapias/online" element={<OnlineTherapy />} />
+            <Route path="/terapias/evaluacion" element={<PsychologicalEvaluation />} />
+            <Route path="/terapias/mindfulness" element={<MindfulnessTherapy />} />
+          </Routes>
+        </main>
+
+        {/* Footer */}
+        <footer className="bg-[#696969] text-white py-12">
+          <div className="container mx-auto px-6">
+            <div className="flex flex-col md:flex-row justify-between">
+              <div className="mb-8 md:mb-0">
+                <h3 className="text-xl font-serif font-bold mb-4">Toledo Gamero Psicología</h3>
+                <p className="max-w-xs">Cuidamos de tu bienestar mental con atención personalizada y profesional.</p>
+              </div>
+              <div className="mb-8 md:mb-0">
+                <h4 className="text-lg font-semibold mb-4">Servicios</h4>
+                <ul className="space-y-2">
+                  <li><Link to="/terapias/individual" className="hover:underline">Terapia Individual</Link></li>
+                  <li><Link to="/terapias/pareja" className="hover:underline">Terapia de Pareja</Link></li>
+                  <li><Link to="/terapias/adolescentes" className="hover:underline">Terapia para Adolescentes</Link></li>
+                  <li><Link to="/terapias/online" className="hover:underline">Terapia Online</Link></li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-lg font-semibold mb-4">Síguenos</h4>
+                <div className="flex space-x-4">
+                  <a href="#" className="hover:text-gray-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                    </svg>
+                  </a>
+                  <a href="#" className="hover:text-gray-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                    </svg>
+                  </a>
+                </div>
               </div>
             </div>
+            <div className="border-t border-gray-800 mt-8 pt-8 text-sm text-gray-400 text-center">
+              <p>&copy; {new Date().getFullYear()} Toledo Gamero Psicología. Todos los derechos reservados.</p>
+            </div>
           </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-sm text-gray-400 text-center">
-            <p>&copy; {new Date().getFullYear()} Toledo Gamero Psicología. Todos los derechos reservados.</p>
-          </div>
-        </div>
-      </footer>
-      
-      <ChatBot />
-    </div>
+        </footer>
+        
+        <ChatBot />
+      </div>
+    </Router>
   );
 }
 
