@@ -74,14 +74,6 @@ const MainNavigation: React.FC = () => {
             </div>
           </NavigationMenuContent>
         </NavigationMenuItem>
-
-        <NavigationMenuItem>
-          <Link to="/contacto">
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Contacto
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
   );
