@@ -60,7 +60,7 @@ const IndividualTherapy = () => {
             
             <div className="md:w-1/2">
               <img 
-                src="/placeholder.svg" 
+                src="/src/assets/terapiaIndividual2.jpg"
                 alt="Terapia Individual" 
                 className="rounded-lg shadow-md w-full h-auto mb-8"
               />
@@ -119,7 +119,7 @@ const IndividualTherapy = () => {
           <div className="md:flex items-center gap-10">
             <div className="md:w-1/2 mb-6 md:mb-0">
               <img 
-                src="/placeholder.svg" 
+                src="/src/assets/terapiaIndividual.png"
                 alt="Nuestro enfoque terapéutico" 
                 className="rounded-lg shadow-md w-full h-auto"
               />

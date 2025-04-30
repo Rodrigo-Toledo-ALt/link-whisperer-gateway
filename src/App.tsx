@@ -20,17 +20,17 @@ const HomePage = () => {
   // Datos para las diapositivas del carrusel
   const slides = [
     { 
-      image: '/placeholder.svg', 
+      image: 'src/assets/terapiaPareja.png',
       title: 'Terapia para Pareja', 
       description: 'Dependencia emocional, Celos, Problemas Interpersonales' 
     },
     { 
-      image: '/placeholder.svg', 
+      image: 'src/assets/terapiaAdolescentes.png',
       title: 'Terapia adolescentes', 
       description: 'Apoyo especializado para jóvenes en etapa de desarrollo' 
     },
     { 
-      image: '/placeholder.svg', 
+      image: 'src/assets/terapiaIndividual2.jpg',
       title: 'Terapia individual', 
       description: 'Atención personalizada para tu bienestar emocional' 
     }
@@ -39,7 +39,7 @@ const HomePage = () => {
   // Servicios de psicología
   const services = [
     {
-      image: '/placeholder.svg',
+      image: 'src/assets/terapiaIndividual.png',
       name: 'Terapia Individual',
       description: 'Atención personalizada en un espacio seguro',
       price: 'Desde 60€',
@@ -47,7 +47,7 @@ const HomePage = () => {
       link: '/terapias/individual'
     },
     {
-      image: '/placeholder.svg',
+      image: 'src/assets/terapiaPareja2.jpg',
       name: 'Terapia de Pareja',
       description: 'Mejora la comunicación y resuelve conflictos',
       price: 'Desde 75€',
@@ -55,7 +55,7 @@ const HomePage = () => {
       link: '/terapias/pareja'
     },
     {
-      image: '/placeholder.svg',
+      image: 'src/assets/terapiaAdolescentes.jpg',
       name: 'Terapia para Adolescentes',
       description: 'Apoyo especializado para jóvenes',
       price: 'Desde 55€',
@@ -63,7 +63,7 @@ const HomePage = () => {
       link: '/terapias/adolescentes'
     },
     {
-      image: '/placeholder.svg',
+      image: 'src/assets/terapiaOnline.jpeg',
       name: 'Terapia Online',
       description: 'Atención psicológica desde cualquier lugar',
       price: 'Desde 50€',
@@ -71,7 +71,7 @@ const HomePage = () => {
       link: '/terapias/online'
     },
     {
-      image: '/placeholder.svg',
+      image: 'src/assets/evaluacionPsicológica.jpg',
       name: 'Evaluación Psicológica',
       description: 'Diagnóstico completo y plan de tratamiento',
       price: 'Desde 80€',
@@ -79,7 +79,7 @@ const HomePage = () => {
       link: '/terapias/evaluacion'
     },
     {
-      image: '/placeholder.svg',
+      image: 'src/assets/mindfullness.png',
       name: 'Mindfulness y Gestión del Estrés',
       description: 'Aprende técnicas para reducir la ansiedad',
       price: 'Desde 65€',
@@ -175,27 +175,27 @@ const HomePage = () => {
         </div>
       </div>
 
-      {/* Testimonials */}
-      <div className="py-16 px-6 bg-[#F9F6F9]">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-serif font-bold text-center mb-12 text-[#696969]">Testimonios</h2>
-          
-          <div className="max-w-4xl mx-auto">
-            <div className="p-6 text-center">
-              <div className="mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="mx-auto text-[#C6AAE3]">
-                  <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/>
-                  <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/>
-                </svg>
+        {/* Testimonials */}
+        <div className="py-16 px-6 bg-[#F9F6F9]">
+          <div className="container mx-auto">
+            <h2 className="text-3xl font-serif font-bold text-center mb-12 text-[#696969]">Testimonios</h2>
+
+            <div className="max-w-4xl mx-auto">
+              <div className="p-6 text-center">
+                <div className="mb-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="mx-auto text-[#C6AAE3]">
+                    <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/>
+                    <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/>
+                  </svg>
+                </div>
+                <p className="text-lg italic mb-4 text-[#696969]">
+                  La terapia en Toledo Gamero ha transformado mi vida. Son profesionales excepcionales que te escuchan con atención y te ayudan a encontrar las herramientas para mejorar.
+                </p>
+                <p className="font-semibold text-[#A880A8]">María G.</p>
               </div>
-              <p className="text-lg italic mb-4 text-[#696969]">
-                La terapia en Toledo Gamero ha transformado mi vida. Son profesionales excepcionales que te escuchan con atención y te ayudan a encontrar las herramientas para mejorar.
-              </p>
-              <p className="font-semibold text-[#A880A8]">María G.</p>
             </div>
           </div>
         </div>
-      </div>
 
       {/* Contact Section */}
       <div className="py-16 px-6">
@@ -267,12 +267,12 @@ function App() {
           <div className="container mx-auto flex items-center justify-between">
             <div className="flex items-center space-x-6">
               <MainNavigation />
-              
+
               <Link to="/" className="text-xl md:text-2xl font-serif font-bold tracking-wider text-center">
                 TOLEDO GAMERO PSICOLOGÍA
               </Link>
             </div>
-            
+
             <div className="flex items-center space-x-4">
               <div className="flex items-center text-[#696969]">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
@@ -280,7 +280,7 @@ function App() {
                 </svg>
                 <span className="font-medium">623 50 63 22</span>
               </div>
-              
+
               <div className="hidden md:flex items-center text-[#696969]">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
                   <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
@@ -288,7 +288,7 @@ function App() {
                 </svg>
                 <span>C/Fuenteovejuna, nº8, 41018 Sevilla</span>
               </div>
-              
+
               <a href="https://wa.me/+34623506322" target="_blank" rel="noopener noreferrer" className="whatsapp-button text-white px-4 py-2 rounded-md flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
                   <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/>
@@ -354,7 +354,7 @@ function App() {
             </div>
           </div>
         </footer>
-        
+
         <ChatBot />
       </div>
     </Router>

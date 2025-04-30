@@ -60,7 +60,7 @@ const MindfulnessTherapy = () => {
             
             <div className="md:w-1/2">
               <img 
-                src="/placeholder.svg" 
+                src="/src/assets/mindfullness.png"
                 alt="Mindfulness y Gestión del Estrés" 
                 className="rounded-lg shadow-md w-full h-auto mb-8"
               />

@@ -60,7 +60,7 @@ const CoupleTherapy = () => {
             
             <div className="md:w-1/2">
               <img 
-                src="/placeholder.svg" 
+                src="/src/assets/terapiaPareja2.jpg"
                 alt="Terapia de Pareja" 
                 className="rounded-lg shadow-md w-full h-auto mb-8"
               />
@@ -119,7 +119,7 @@ const CoupleTherapy = () => {
           <div className="md:flex items-center gap-10">
             <div className="md:w-1/2 mb-6 md:mb-0">
               <img 
-                src="/placeholder.svg" 
+                src="/src/assets/terapiaPareja.png"
                 alt="Nuestro método terapéutico" 
                 className="rounded-lg shadow-md w-full h-auto"
               />

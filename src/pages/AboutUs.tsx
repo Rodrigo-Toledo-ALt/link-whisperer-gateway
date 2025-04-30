@@ -8,19 +8,19 @@ const AboutUs = () => {
       name: "Dra. Laura Toledo Gamero",
       title: "Psicóloga Clínica",
       bio: "Especialista en terapia cognitivo-conductual con más de 15 años de experiencia ayudando a personas a superar problemas de ansiedad, depresión y relaciones interpersonales.",
-      image: "/placeholder.svg"
+      image: "src/assets/psicologamujer1.png"
     },
     {
       name: "Dr. Carlos Martínez",
       title: "Psicólogo Infantil y Adolescente",
       bio: "Experto en el desarrollo infantil y problemas de comportamiento en adolescentes, con formación especializada en terapia de juego y técnicas de intervención familiar.",
-      image: "/placeholder.svg"
+      image: "src/assets/psicologoHombre1.png"
     },
     {
       name: "Dra. Ana Sánchez",
       title: "Psicóloga de Parejas",
       bio: "Terapeuta especializada en relaciones de pareja, con formación en terapia sistémica y emotivo-conductual para la resolución de conflictos y mejora de la comunicación.",
-      image: "/placeholder.svg"
+      image: "src/assets/psicologamujer2.png"
     }
   ];
 
@@ -42,7 +42,7 @@ const AboutUs = () => {
           <div className="md:flex items-center gap-10">
             <div className="md:w-1/2 mb-6 md:mb-0">
               <img 
-                src="/placeholder.svg" 
+                src="src/assets/SobreNosotros.jpg"
                 alt="Nuestra misión" 
                 className="rounded-lg shadow-md w-full h-auto"
               />
