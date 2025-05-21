@@ -4,23 +4,33 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
+// Importar imágenes
+import terapiaParejaImg from "../assets/terapiaPareja.png";
+import terapiaAdolescentesImg from "../assets/terapiaAdolescentes.png";
+import terapiaIndividualImg from "../assets/terapiaIndividual.png";
+import terapiaIndividual2Img from "../assets/terapiaIndividual2.jpg";
+import terapiaPareja2Img from "../assets/terapiaPareja2.jpg";
+import terapiaOnlineImg from "../assets/terapiaOnline.jpeg";
+import evaluacionPsicologicaImg from "../assets/evaluacionPsicológica.jpg";
+import mindfulnessImg from "../assets/mindfullness.png";
+
 const Index = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   
   // Datos para las diapositivas del carrusel
   const slides = [
     { 
-      image: '/placeholder.svg', 
+      image: terapiaParejaImg, 
       title: 'Terapia para Pareja', 
       description: 'Dependencia emocional, Celos, Problemas Interpersonales' 
     },
     { 
-      image: '/placeholder.svg', 
+      image: terapiaAdolescentesImg, 
       title: 'Terapia adolescentes', 
       description: 'Apoyo especializado para jóvenes en etapa de desarrollo' 
     },
     { 
-      image: '/placeholder.svg', 
+      image: terapiaIndividualImg, 
       title: 'Terapia individual', 
       description: 'Atención personalizada para tu bienestar emocional' 
     }
@@ -29,42 +39,42 @@ const Index = () => {
   // Servicios de psicología
   const services = [
     {
-      image: '/placeholder.svg',
+      image: terapiaIndividual2Img,
       name: 'Terapia Individual',
       description: 'Atención personalizada en un espacio seguro',
       price: 'Desde 60€',
       duration: '50 minutos',
     },
     {
-      image: '/placeholder.svg',
+      image: terapiaPareja2Img,
       name: 'Terapia de Pareja',
       description: 'Mejora la comunicación y resuelve conflictos',
       price: 'Desde 75€',
       duration: '60 minutos',
     },
     {
-      image: '/placeholder.svg',
+      image: terapiaAdolescentesImg,
       name: 'Terapia para Adolescentes',
       description: 'Apoyo especializado para jóvenes',
       price: 'Desde 55€',
       duration: '45 minutos',
     },
     {
-      image: '/placeholder.svg',
+      image: terapiaOnlineImg,
       name: 'Terapia Online',
       description: 'Atención psicológica desde cualquier lugar',
       price: 'Desde 50€',
       duration: '50 minutos',
     },
     {
-      image: '/placeholder.svg',
+      image: evaluacionPsicologicaImg,
       name: 'Evaluación Psicológica',
       description: 'Diagnóstico completo y plan de tratamiento',
       price: 'Desde 80€',
       duration: '90 minutos',
     },
     {
-      image: '/placeholder.svg',
+      image: mindfulnessImg,
       name: 'Mindfulness y Gestión del Estrés',
       description: 'Aprende técnicas para reducir la ansiedad',
       price: 'Desde 65€',

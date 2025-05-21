@@ -1,6 +1,8 @@
 
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
+import terapiaOnlineImg from "../../assets/terapiaOnline.jpeg";
+import terapiaOnlinePruebasImg from "../../assets/terapiaOnlinePruebas.jpg";
 
 const OnlineTherapy = () => {
   const benefits = [
@@ -58,7 +60,7 @@ const OnlineTherapy = () => {
             
             <div className="md:w-1/2">
               <img 
-                src="/src/assets/terapiaOnline.jpeg"
+                src={terapiaOnlineImg}
                 alt="Terapia Online" 
                 className="rounded-lg shadow-md w-full h-auto mb-8"
               />
@@ -150,7 +152,7 @@ const OnlineTherapy = () => {
           <div className="md:flex items-center gap-10">
             <div className="md:w-1/2 mb-6 md:mb-0">
               <img 
-                src="/src/assets/terapiaOnlinePruebas.jpg"
+                src={terapiaOnlinePruebasImg}
                 alt="Consejos para terapia online" 
                 className="rounded-lg shadow-md w-full h-auto"
               />

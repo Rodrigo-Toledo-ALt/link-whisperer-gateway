@@ -1,6 +1,8 @@
 
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
+import evaluacionImg from "../../assets/evaluacionPsicológica.jpg";
+import evaluacionImg2 from "../../assets/evaluacionPsicologia2.jpg";
 
 const PsychologicalEvaluation = () => {
   const benefits = [
@@ -60,7 +62,7 @@ const PsychologicalEvaluation = () => {
             
             <div className="md:w-1/2">
               <img 
-                src="/src/assets/evaluacionPsicológica.jpg"
+                src={evaluacionImg}
                 alt="Evaluación Psicológica" 
                 className="rounded-lg shadow-md w-full h-auto mb-8"
               />
@@ -152,7 +154,7 @@ const PsychologicalEvaluation = () => {
           <div className="md:flex items-center gap-10">
             <div className="md:w-1/2 mb-6 md:mb-0">
               <img 
-                src="/src/assets/evaluacionPsicologia2.jpg"
+                src={evaluacionImg2}
                 alt="Informes Psicológicos" 
                 className="rounded-lg shadow-md w-full h-auto"
               />

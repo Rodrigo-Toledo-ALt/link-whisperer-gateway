@@ -1,6 +1,8 @@
 
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
+import terapiaParejaImg from "../../assets/terapiaPareja2.jpg";
+import terapiaParejaPngImg from "../../assets/terapiaPareja.png";
 
 const CoupleTherapy = () => {
   const benefits = [
@@ -60,7 +62,7 @@ const CoupleTherapy = () => {
             
             <div className="md:w-1/2">
               <img 
-                src="/src/assets/terapiaPareja2.jpg"
+                src={terapiaParejaImg}
                 alt="Terapia de Pareja" 
                 className="rounded-lg shadow-md w-full h-auto mb-8"
               />
@@ -119,7 +121,7 @@ const CoupleTherapy = () => {
           <div className="md:flex items-center gap-10">
             <div className="md:w-1/2 mb-6 md:mb-0">
               <img 
-                src="/src/assets/terapiaPareja.png"
+                src={terapiaParejaPngImg}
                 alt="Nuestro método terapéutico" 
                 className="rounded-lg shadow-md w-full h-auto"
               />

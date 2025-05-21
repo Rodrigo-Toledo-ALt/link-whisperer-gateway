@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
+import mindfulnessImg from "../../assets/mindfullness.png";
 
 const MindfulnessTherapy = () => {
   const benefits = [
@@ -60,7 +61,7 @@ const MindfulnessTherapy = () => {
             
             <div className="md:w-1/2">
               <img 
-                src="/src/assets/mindfullness.png"
+                src={mindfulnessImg}
                 alt="Mindfulness y Gestión del Estrés" 
                 className="rounded-lg shadow-md w-full h-auto mb-8"
               />
